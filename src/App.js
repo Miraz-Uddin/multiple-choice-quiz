@@ -5,8 +5,8 @@ function App() {
     const res = await fetch(
       "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
     );
-    const data = await res.json();
-    console.log(data);
+    const { results } = await res.json();
+    console.log(results);
   };
   return (
     <>
