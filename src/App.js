@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const fetchQuiz = async () => {
+    const res = await fetch(
+      "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
+    );
+    const data = await res.json();
+    console.log(data);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={fetchQuiz}>Start Quiz</button>
+    </>
   );
 }
 
